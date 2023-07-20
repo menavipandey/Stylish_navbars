@@ -1,0 +1,130 @@
+
+body {
+  background: linen;
+  margin: 0;
+}
+
+/* navbar main style */
+nav {
+  width: 100%;
+  height: 90px;
+
+  background-image: url(cysl.jpg);
+  box-shadow: 0 9px 6px 3px rgba(0, 0, 0, 0.2);
+  /* use a "z-index" if you're using something that can cover the menu */
+}
+
+/* you can also have your logo image here */
+
+nav .brand img {
+  height: 70px;
+  margin-left: 90px;
+}
+
+nav ul {
+  all: initial; /* clears all the previous and default style of ul */
+}
+
+.navbar {
+  display: flex;
+  padding: 0 50px;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+.navbar .menu {
+  display: flex;
+  height: 100%;
+  line-height: 100px;
+}
+.navbar .menu li {
+  position: relative;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  /* here start menu links decoration */
+  font-family: "Nunito", sans-serif;
+}
+.navbar .menu li a {
+  color: black;
+  text-decoration: none;
+  white-space: nowrap;
+  height: 100%;
+  text-transform: uppercase;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.active a {
+  color: rgb(255, 234, 166);
+}
+nav a:hover {
+  background-color: rgb(182, 225, 255);
+  color: rgb(0, 70, 70);
+}
+a:hover {
+  color: rgb(255, 234, 166);
+}
+
+/* hides open and close button */
+.navbar .navOpen,
+.navbar .navClose {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  /* setting the responsive menu style */
+  nav {
+    background-image: url(cysl.jpg);
+  }
+  .navbar .menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-image: url(cysl.jpg);
+	background-size: cover;
+    height: 100vh;
+    min-width: 250px;
+    top: 0;
+    right: -100%; /* choose right or left to set menu side displayed / keep -100% to hide it */
+    line-height: normal;
+    padding: 20px;
+    transition: all 0.5s ease; /* to make the transition close-to-open soft */
+  }
+
+  nav .brand img {
+    height: 70px;
+    margin-left: 20px;
+  }
+
+  .navbar .menu li a {
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .navbar .menu li a:hover {
+    background-color: rgb(182, 225, 255);
+  }
+  .navbar .menu li {
+    display: block;
+    height: auto;
+    line-height: 45px;
+    margin: 0;
+	border-radius: 5px;
+  }
+  .navbar .menu li:hover {
+    background-color: rgb(182, 225, 255);
+  }
+  .navbar .menu .navOpen {
+    margin-right: 5%;
+  }
+  .navbar .navOpen,
+  .navbar .navClose {
+    /* color: white; */
+    font-size: x-large;
+    display: block;
+  }
+  .navbar .navClose {
+    margin-bottom: 50px;
+  }
+}
